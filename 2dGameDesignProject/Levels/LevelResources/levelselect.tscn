@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://dmd3hk8l0afw5"]
+
+[ext_resource type="Script" uid="uid://brp1tfela0pnr" path="res://Levels/LevelResources/LEVELMAP.gd" id="1_d7uhf"]
+[ext_resource type="PackedScene" uid="uid://bup6iyy30o7f7" path="res://Levels/LevelResources/LEVELICON.tscn" id="1_ymjx6"]
+[ext_resource type="Texture2D" uid="uid://dm4wy1g1tmtgq" path="res://Sprite/knight.png" id="3_d7uhf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lynu4"]
+atlas = ExtResource("3_d7uhf")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edb08"]
+atlas = ExtResource("3_d7uhf")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nybwe"]
+atlas = ExtResource("3_d7uhf")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sql6n"]
+atlas = ExtResource("3_d7uhf")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_evh4u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lynu4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edb08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nybwe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sql6n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="LEVELSELECT" type="Control" unique_id=937300218]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 640.0
+script = ExtResource("1_d7uhf")
+
+[node name="LEVELICON" parent="." unique_id=422419891 instance=ExtResource("1_ymjx6")]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 320.0
+offset_right = 320.0
+offset_bottom = 384.0
+loadedLevel = ""
+COMPLETED = false
+
+[node name="LEVELICON2" parent="." unique_id=977088305 instance=ExtResource("1_ymjx6")]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 320.0
+offset_right = 576.0
+offset_bottom = 384.0
+level_index = 2
+loadedLevel = ""
+COMPLETED = false
+
+[node name="LEVELICON3" parent="." unique_id=1084620115 instance=ExtResource("1_ymjx6")]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 320.0
+offset_right = 832.0
+offset_bottom = 384.0
+level_index = 3
+loadedLevel = ""
+COMPLETED = false
+
+[node name="PLAYER" type="Control" parent="." unique_id=201816820]
+anchors_preset = 0
+offset_left = 256.0
+offset_top = 320.0
+offset_right = 320.0
+offset_bottom = 384.0
+pivot_offset = Vector2(32, 32)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PLAYER" unique_id=434446635]
+position = Vector2(32, 32)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_evh4u")
+frame = 1
+frame_progress = 0.04127487

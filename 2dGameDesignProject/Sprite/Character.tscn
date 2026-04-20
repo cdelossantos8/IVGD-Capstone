@@ -193,7 +193,7 @@ jumpForce = 600.0
 texture_filter = 5
 scale = Vector2(7.375, 6.8125)
 sprite_frames = SubResource("SpriteFrames_it3yl")
-animation = &"roll"
+animation = &"death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=748484614]
 position = Vector2(-9, 15)

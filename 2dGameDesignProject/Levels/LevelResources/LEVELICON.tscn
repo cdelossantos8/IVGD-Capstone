@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://bup6iyy30o7f7"]
+
+[ext_resource type="Script" uid="uid://dgnvjrq2qp6hx" path="res://levelicon.gd" id="1_dg0be"]
+[ext_resource type="Texture2D" uid="uid://bu1hjfhpj56lb" path="res://Assets/Skeletons_Free_Pack/Skeletons_Free_Pack/Skeleton_Sword/Skeleton_White/Skeleton_Without_VFX/Skeleton_01_White_Idle.png" id="2_yqqew"]
+
+[sub_resource type="Gradient" id="Gradient_n6umy"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yqqew"]
+gradient = SubResource("Gradient_n6umy")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ba0il"]
+atlas = ExtResource("2_yqqew")
+region = Rect2(0, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2e7p4"]
+atlas = ExtResource("2_yqqew")
+region = Rect2(96, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b46dg"]
+atlas = ExtResource("2_yqqew")
+region = Rect2(192, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbkie"]
+atlas = ExtResource("2_yqqew")
+region = Rect2(288, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ej5gc"]
+atlas = ExtResource("2_yqqew")
+region = Rect2(384, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mgxs"]
+atlas = ExtResource("2_yqqew")
+region = Rect2(480, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqv3n"]
+atlas = ExtResource("2_yqqew")
+region = Rect2(576, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qagop"]
+atlas = ExtResource("2_yqqew")
+region = Rect2(672, 0, 96, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_av5qh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ba0il")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2e7p4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b46dg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbkie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ej5gc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mgxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqv3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qagop")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="LEVELICON" type="Control" unique_id=422419891]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 64.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+script = ExtResource("1_dg0be")
+level_index = 1
+loadedLevel = null
+COMPLETED = null
+
+[node name="Label" type="Label" parent="." unique_id=1010474056]
+layout_mode = 0
+offset_left = 0.31683138
+offset_top = -24.0
+offset_right = 55.76237
+text = "Level 1"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1141249186]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 0.31683138
+offset_right = 64.31683
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 32)
+texture = SubResource("GradientTexture2D_yqqew")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=760020819]
+position = Vector2(88, 32)
+sprite_frames = SubResource("SpriteFrames_av5qh")
+flip_h = true
