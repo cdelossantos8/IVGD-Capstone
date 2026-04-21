@@ -80,8 +80,6 @@ offset_bottom = 64.0
 pivot_offset = Vector2(32, 32)
 script = ExtResource("1_dg0be")
 level_index = 1
-loadedLevel = null
-COMPLETED = null
 
 [node name="Label" type="Label" parent="." unique_id=1010474056]
 layout_mode = 0
@@ -103,4 +101,5 @@ texture = SubResource("GradientTexture2D_yqqew")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=760020819]
 position = Vector2(88, 32)
 sprite_frames = SubResource("SpriteFrames_av5qh")
+frame_progress = 0.7637842
 flip_h = true
