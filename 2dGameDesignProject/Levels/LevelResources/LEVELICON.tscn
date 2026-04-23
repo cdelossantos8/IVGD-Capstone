@@ -416,6 +416,7 @@ script = ExtResource("1_dg0be")
 level_index = 1
 
 [node name="Node2D" type="Node2D" parent="." unique_id=668261280]
+position = Vector2(40, 0)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Node2D" unique_id=188978234]
 tile_map_data = PackedByteArray("AAAAAP//AAAAAAsAAAAAAAAAAAAAAAwAAAAAAAEAAAAAAA0AAAAAAAIAAAAAAA4AAAAAAAMAAAAAAA8AAAABAP7/AAABAAoAAAABAP//AAABAAsAAAABAAAAAAABAAwAAAABAAEAAAABAA0AAAABAAIAAAABAA4AAAABAAMAAAABAA8AAAACAP7/AAACAAoAAAACAP//AAACAAsAAAACAAAAAAACAAwAAAACAAEAAAACAA0AAAACAAIAAAACAA4AAAACAAMAAAACAA8AAAADAP//AAADAAsAAAADAAAAAAADAAwAAAADAAEAAAADAA0AAAADAAIAAAADAA4AAAADAAMAAAADAA8AAAA=")
@@ -434,7 +435,7 @@ text = "Level 1"
 horizontal_alignment = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=760020819]
-position = Vector2(88, 32)
+position = Vector2(112, 32)
 sprite_frames = SubResource("SpriteFrames_av5qh")
-frame_progress = 0.6974754
+frame_progress = 0.5548807
 flip_h = true
