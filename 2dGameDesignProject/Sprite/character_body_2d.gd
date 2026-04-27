@@ -4,6 +4,24 @@ extends CharacterBody2D
 @onready var weaponSlot: Node2D = %WeaponSlot
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
+enum WeaponType { SWORD, BOW, GAUNTLETS }
+var weaponIndex : int = 0
+
+var switchCooldown : float = 1.0
+var timeSinceSwitch : float = 0.0
+
+var weaponScenes = {
+	WeaponType.SWORD: preload("res://Weapons/Sword/Sword.tscn"),
+	WeaponType.BOW: preload("res://Weapons/Bow/Bow.tscn"),
+	WeaponType.GAUNTLETS: preload("res://Weapons/Gauntlets/Gauntlets.tscn"),
+}
+
+var weapons : Array [PackedScene] = [
+	preload("res://Weapons/Sword/Sword.tscn"),
+	preload("res://Weapons/Bow/Bow.tscn"),
+	preload("res://Weapons/Gauntlets/Gauntlets.tscn")
+]
+
 @export var currentHealth: float = 100.0
 @export var maxHealth: float = 100.0
 @export var speed: float = 200.0
@@ -30,10 +48,13 @@ func _ready() -> void:
 	add_to_group("player")
 	lastSafePosition = global_position
 	camera_2d.zoom = Vector2(cameraZoom, cameraZoom)
-	anim.animation_finished.connect(_on_animation_finished)  # ADD THIS
+	anim.animation_finished.connect(_on_animation_finished)  
+	equipWeapon(weapons[weaponIndex]) # ADD THIS
 
 
 func _physics_process(delta):
+	timeSinceSwitch += delta
+	
 	#check if the player is dead 
 	if isdead == true: 
 		return
@@ -66,7 +87,7 @@ func _physics_process(delta):
 			weapon.startDownAttack()
 
 	velocity.x = dir * speed
-
+	
 	# Animation
 	if is_rolling:
 		pass
@@ -97,6 +118,14 @@ func _physics_process(delta):
 			lastSafePosition = global_position
 			safePositionTimer = 0.0
 	move_and_slide()
+	
+### SWITCHING ###
+func _input(event):
+	if event.is_action_pressed("switch"):
+		if (timeSinceSwitch >= switchCooldown):
+			switchWeapon()
+			timeSinceSwitch = 0.0
+			
 
 func _on_animation_finished():
 	if anim.animation == "roll": 
@@ -113,7 +142,15 @@ func equipWeapon(weaponScene: PackedScene):
 	weaponSlot.add_child(weapon)
 	print("weapon added to slot, calling setup")
 	weapon.setup(self)
-
+	
+func switchWeapon():
+	weaponIndex += 1
+	
+	weaponIndex = weaponIndex % weapons.size()
+	
+	equipWeapon(weapons[weaponIndex])
+	
+	
 func flashRed():
 	if isdead:
 		return
