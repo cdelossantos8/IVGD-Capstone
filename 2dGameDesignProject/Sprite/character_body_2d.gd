@@ -4,17 +4,10 @@ extends CharacterBody2D
 @onready var weaponSlot: Node2D = %WeaponSlot
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
-enum WeaponType { SWORD, BOW, GAUNTLETS }
 var weaponIndex : int = 0
 
 var switchCooldown : float = 1.0
 var timeSinceSwitch : float = 0.0
-
-var weaponScenes = {
-	WeaponType.SWORD: preload("res://Weapons/Sword/Sword.tscn"),
-	WeaponType.BOW: preload("res://Weapons/Bow/Bow.tscn"),
-	WeaponType.GAUNTLETS: preload("res://Weapons/Gauntlets/Gauntlets.tscn"),
-}
 
 var weapons : Array [PackedScene] = [
 	preload("res://Weapons/Sword/Sword.tscn"),
