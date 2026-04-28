@@ -64,10 +64,10 @@ func _input(event):
 		var teleport = create_tween()
 		move.tween_property($PLAYER, "scale:x", 1, 0)
 		teleport.tween_property($PLAYER/AnimatedSprite2D, "modulate", Color.SKY_BLUE, 0)
-		teleport.tween_property($PLAYER/BEAM, "scale", Vector2(1,1), 0.1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+		teleport.tween_property($PLAYER/BEAM, "scale", Vector2(1, 1.13), 0.1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 		
 		teleport.tween_property($PLAYER/AnimatedSprite2D, "scale", Vector2(1,0), 0.1)
-		teleport.tween_property($PLAYER/BEAM, "scale", Vector2(0,1), 0.25).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+		teleport.tween_property($PLAYER/BEAM, "scale", Vector2(0,1.13), 0.25).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 		
 		print("TELEPORTED")
 		

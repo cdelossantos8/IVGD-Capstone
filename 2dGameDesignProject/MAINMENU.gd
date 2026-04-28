@@ -1,6 +1,6 @@
 extends Control
 
-@onready var QuitLabel: Label = $VBoxContainer/Quit/HBoxContainer/QuitLabel
+@onready var QuitLabel: Label = $QuitLabel
 @onready var Start: Button = $VBoxContainer/Start
 @onready var Quit: Button = $VBoxContainer/Quit
 
@@ -30,6 +30,8 @@ var messages = [
 	
 	"IT WONT WORK STOP PRESSING ME", 
 	
+	"I'M WARNING YOU",
+	
 	"AHHHHHHHH"
 	]
 
@@ -42,7 +44,12 @@ func _process(float) -> void:
 func _on_quit_pressed() -> void:
 	QuitLabel.text = messages[messageIndex]
 	if (messageIndex == messages.size() - 1):
+		var explode = create_tween()
+		explode.tween_property(QuitLabel, "scale", Vector2(8, 8), 0.5)
+		await explode.finished
+		
 		get_tree().quit()
+		
 	messageIndex = (messageIndex + 1) 
 	
 
