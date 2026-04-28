@@ -35,8 +35,6 @@ var messages = [
 	"AHHHHHHHH"
 	]
 
-func ready():
-	pass
 
 func _process(float) -> void:
 	$Node2D/AnimatedSprite2D.play("default")
@@ -45,15 +43,13 @@ func _on_quit_pressed() -> void:
 	QuitLabel.text = messages[messageIndex]
 	if (messageIndex == messages.size() - 1):
 		var explode = create_tween()
-		explode.tween_property(QuitLabel, "scale", Vector2(8, 8), 0.5)
+		explode.tween_property(QuitLabel, "scale", Vector2(20, 40), 0.5)
 		await explode.finished
 		
 		get_tree().quit()
 		
 	messageIndex = (messageIndex + 1) 
 	
-
-
 func _on_start_pressed() -> void:
 	var run = create_tween()
 	
