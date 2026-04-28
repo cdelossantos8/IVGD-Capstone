@@ -2,9 +2,9 @@ extends Control
 
 @onready var levels: Array = [$LEVELICON, $LEVELICON2, $LEVELICON3]
 @onready var LOADEDLEVELS: Array = [
-	'res://Levels/BowLevels/BowLevel1.tscn', 
-	"res://Levels/BowLevels/BowLevel2.tscn", 
-	"res://Levels/BowLevels/BowLevel3.tscn"
+	'res://Levels/MainLevels/MainLevel1.tscn',
+	'res://Levels/MainLevels/MainLevel2.tscn',
+	'res://Levels/MainLevels/MainLevel3.tscn'
 ]
 
 var CompletedLevels : Array = []
@@ -12,20 +12,33 @@ var isMoving : bool = false
 var current_level : int = 0
 
 func _ready() -> void:
+	isMoving = true
+	var move = create_tween()
+	var fade = create_tween()
+	
+	fade.tween_property($ColorRect, "modulate:a", 0.0, .5)
+	move.tween_property($PLAYER, "position", Vector2(levels[current_level].global_position.x,levels[current_level].global_position.y), 1.75)
+	
+	await move.finished
+	isMoving = false
+	await fade.finished
 	
 	
-	$PLAYER.global_position = levels[current_level].global_position
+	#$PLAYER.global_position = levels[current_level].global_position
 
 func createCompletedLevels() -> void: 
 	pass
 
 func _process(float):
-	$PLAYER/AnimatedSprite2D.play("default")
+	if isMoving == false:
+		$PLAYER/AnimatedSprite2D.play("default")
+	else: 
+		$PLAYER/AnimatedSprite2D.play("running")
 
 func _input(event):
 	var move = create_tween()
 	
-	if event.is_action_pressed("ui_left") and current_level > 0:
+	if event.is_action_pressed("moveLeft") and current_level > 0:
 		current_level -= 1
 		isMoving = true
 		move.tween_property($PLAYER, "scale:x", -1, 0)
@@ -35,7 +48,7 @@ func _input(event):
 		isMoving = false
 		#$PLAYER.global_position = levels[current_level].global_position
 	
-	if event.is_action_pressed("ui_right") and current_level < levels.size() -1:
+	if event.is_action_pressed("moveRight") and current_level < levels.size() -1:
 		current_level += 1
 		isMoving = true
 		move.tween_property($PLAYER, "scale:x", 1, 0)

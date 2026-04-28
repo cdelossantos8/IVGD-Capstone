@@ -6,7 +6,7 @@ extends CharacterBody2D
 
 var weaponIndex : int = 0
 
-var switchCooldown : float = 1.0
+var switchCooldown : float = 0.5
 var timeSinceSwitch : float = 0.0
 
 var weapons : Array [PackedScene] = [

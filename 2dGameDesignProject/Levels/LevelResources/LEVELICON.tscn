@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dgnvjrq2qp6hx" path="res://levelicon.gd" id="1_dg0be"]
 [ext_resource type="Texture2D" uid="uid://cu0j3k160wsbl" path="res://Assets/Legacy-Fantasy - High Forest 2.3/Assets/Props-Rocks.png" id="2_ba0il"]
 [ext_resource type="Texture2D" uid="uid://bu1hjfhpj56lb" path="res://Assets/Skeletons_Free_Pack/Skeletons_Free_Pack/Skeleton_Sword/Skeleton_White/Skeleton_Without_VFX/Skeleton_01_White_Idle.png" id="2_yqqew"]
+[ext_resource type="FontFile" uid="uid://65x76g17k7nb" path="res://Assets/New_Rocker/NewRocker-Regular.ttf" id="3_2e7p4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2e7p4"]
 texture = ExtResource("2_ba0il")
@@ -431,11 +432,15 @@ layout_mode = 0
 offset_top = -48.0
 offset_right = 55.44554
 offset_bottom = -24.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_2e7p4")
 text = "Level 1"
 horizontal_alignment = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=760020819]
 position = Vector2(112, 32)
 sprite_frames = SubResource("SpriteFrames_av5qh")
-frame_progress = 0.5548807
+frame_progress = 0.98514897
 flip_h = true
