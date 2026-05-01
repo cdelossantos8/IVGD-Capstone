@@ -611,4 +611,4 @@ jumpForce = 460.0
 [node name="UI" parent="." unique_id=1432553550 instance=ExtResource("6_amq1f")]
 
 [node name="FinishLevel" parent="." unique_id=492503270 instance=ExtResource("7_dkuhl")]
-position = Vector2(1408, 384)
+position = Vector2(1048, 432)

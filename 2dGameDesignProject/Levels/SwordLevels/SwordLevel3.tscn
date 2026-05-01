@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://be4nl2ofjxkub" path="res://Levels/LevelResources/catch_fall.gd" id="4_a4w2t"]
 [ext_resource type="PackedScene" uid="uid://bilgph55b35oa" path="res://Levels/LevelResources/ladder_zone.tscn" id="4_jkwt2"]
 [ext_resource type="PackedScene" uid="uid://dbq2vts66xtpi" path="res://Sprite/Character.tscn" id="5_oa4pi"]
-[ext_resource type="PackedScene" uid="uid://dwrk1nabq0y3g" path="res://Weapons/WeaponPickUp.tscn" id="6_eh8dq"]
 [ext_resource type="PackedScene" uid="uid://dnphqkwoyrt06" path="res://UI/UI.tscn" id="7_hlv3x"]
 [ext_resource type="PackedScene" uid="uid://b8gs2ueysl86o" path="res://Levels/LevelResources/FinishLevel.tscn" id="8_od3fx"]
 
@@ -666,10 +665,6 @@ shape = SubResource("RectangleShape2D_dycxk")
 [node name="CharacterBody2D" parent="." unique_id=2039678697 instance=ExtResource("5_oa4pi")]
 position = Vector2(128, 488)
 jumpForce = 460.0
-
-[node name="WeaponPickUp" parent="." unique_id=1707225356 instance=ExtResource("6_eh8dq")]
-position = Vector2(216, 494)
-scale = Vector2(0.7, 0.7)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1066968124]
 position = Vector2(216, 494)

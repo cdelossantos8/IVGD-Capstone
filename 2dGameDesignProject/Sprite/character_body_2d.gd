@@ -137,9 +137,12 @@ func equipWeapon(weaponScene: PackedScene):
 	weapon.setup(self)
 	
 func switchWeapon():
+	
+	
 	weaponIndex += 1
 	
 	weaponIndex = weaponIndex % weapons.size()
+	
 	
 	equipWeapon(weapons[weaponIndex])
 	

@@ -20,6 +20,7 @@ func _ready():
 
 func _onBodyEntered(body):
 	if body.is_in_group("player"):
+	
 		var score = calculateScore(body)
 		var grade = getGrade(score.finalScore)
 		score["grade"] = grade

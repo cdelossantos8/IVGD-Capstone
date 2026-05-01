@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dbq2vts66xtpi" path="res://Sprite/Character.tscn" id="5_6hrob"]
 [ext_resource type="PackedScene" uid="uid://dnphqkwoyrt06" path="res://UI/UI.tscn" id="7_0kdua"]
 [ext_resource type="PackedScene" uid="uid://b8gs2ueysl86o" path="res://Levels/LevelResources/FinishLevel.tscn" id="8_respb"]
+[ext_resource type="FontFile" uid="uid://c5n8iaq0jw5h8" path="res://Assets/Daydream DEMO.otf" id="8_rxouh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dycxk"]
 texture = ExtResource("3_ynpkp")
@@ -601,12 +602,12 @@ shape = SubResource("RectangleShape2D_dycxk")
 
 [node name="CharacterBody2D" parent="." unique_id=2039678697 instance=ExtResource("5_6hrob")]
 position = Vector2(160.00002, 570)
-jumpForce = 460.0
+jumpForce = 500.0
 
 [node name="UI" parent="." unique_id=1432553550 instance=ExtResource("7_0kdua")]
 
 [node name="FinishLevel" parent="." unique_id=492503270 instance=ExtResource("8_respb")]
-position = Vector2(3192, 496)
+position = Vector2(3184, 520)
 
 [node name="ENEMIES" type="Node2D" parent="." unique_id=1888518329]
 position = Vector2(4, 88)
@@ -626,3 +627,15 @@ scale = Vector2(1.325, 1.134)
 [node name="Skeleton4" parent="ENEMIES" unique_id=59414669 instance=ExtResource("2_nxm1n")]
 position = Vector2(1988, 420)
 scale = Vector2(1.325, 1.134)
+
+[node name="Label" type="Label" parent="." unique_id=1932159517]
+offset_left = 392.0
+offset_top = 656.0
+offset_right = 1344.0
+offset_bottom = 816.0
+theme_override_fonts/font = ExtResource("8_rxouh")
+text = "Use W/A/S/d to move
+
+press the \" key to switch weapons!
+
+press \"enter\" to attack!"

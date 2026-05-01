@@ -3,8 +3,8 @@ extends Control
 @onready var levels: Array = [$LEVELICON, $LEVELICON2, $LEVELICON3]
 @onready var LOADEDLEVELS: Array = [
 	'res://Levels/MainLevels/MainLevel1.tscn',
-	'res://Levels/MainLevels/MainLevel2.tscn',
-	'res://Levels/MainLevels/MainLevel3.tscn'
+	'res://Levels/SwordLevels/SwordLevel3.tscn',
+	'res://Levels/GauntletsLevels/GauntletsLevel3.tscn'
 ]
 
 var CompletedLevels : Array = []

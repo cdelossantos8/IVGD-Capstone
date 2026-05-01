@@ -4264,8 +4264,8 @@ tile_map_data = PackedByteArray("AAAAABwAAAABAAAAAAAAAB0AAAABAAEAAAAAAB4AAAABAAI
 tile_set = SubResource("TileSet_obh8q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D" unique_id=1579938303]
-position = Vector2(216.00002, 432.00003)
-scale = Vector2(2.8125, 2.9375007)
+position = Vector2(216, 428)
+scale = Vector2(2.8125, 2.718749)
 sprite_frames = SubResource("SpriteFrames_k4iy2")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1897741639]
