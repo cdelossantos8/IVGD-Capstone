@@ -77,8 +77,21 @@ func _physics_process(delta):
 		velocity.y = jumpForce * 2 
 		downsmash = true
 		var weapon = weaponSlot.get_child(0)
-		if weapon and weapon.has_method("startDownAttack"):
+		if weapon and weapon.has_method("startDownAttack") and weaponIndex == 0:
+			var down = create_tween()
+			down.tween_property(camera_2d, "offset", Vector2(0, 100), 0.25)
+			
 			weapon.startDownAttack()
+			while not is_on_floor():
+				await get_tree().process_frame
+			
+			await get_tree().create_timer(0.1).timeout
+			
+			var up = create_tween()
+			up.tween_property(camera_2d, "offset", Vector2(0, 0), .25).set_ease(Tween.EASE_IN)
+			
+
+			
 
 	velocity.x = dir * speed
 	

@@ -583,6 +583,9 @@ texture = ExtResource("1_8s3bi")
 position = Vector2(929, 451)
 scale = Vector2(1.325, 1.134)
 
+[node name="FinishLevel" parent="." unique_id=492503270 instance=ExtResource("7_dkuhl")]
+position = Vector2(1048, 432)
+
 [node name="LEVEL DESIGN" type="Node2D" parent="." unique_id=151655809]
 
 [node name="Grounds" type="TileMapLayer" parent="LEVEL DESIGN" unique_id=2070603814]
@@ -609,6 +612,3 @@ position = Vector2(128, 488)
 jumpForce = 460.0
 
 [node name="UI" parent="." unique_id=1432553550 instance=ExtResource("6_amq1f")]
-
-[node name="FinishLevel" parent="." unique_id=492503270 instance=ExtResource("7_dkuhl")]
-position = Vector2(1048, 432)

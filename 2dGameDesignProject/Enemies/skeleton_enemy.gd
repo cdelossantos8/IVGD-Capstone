@@ -18,6 +18,8 @@ var startingLabelPos : Vector2
 var collisionBoxes : Array = [ $PhysicsCollision, $Hitbox/HitboxShape, $Headshot/HeadshotShape]
 @onready var physics_collision: CollisionShape2D = $PhysicsCollision
 var isKnockedBack : bool = false
+
+
 func _ready():
 	headshot_label.visible = false
 	startingLabelPos = headshot_label.position
