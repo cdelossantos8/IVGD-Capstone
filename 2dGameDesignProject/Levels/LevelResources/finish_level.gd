@@ -20,7 +20,8 @@ func _ready():
 
 func _onBodyEntered(body):
 	if body.is_in_group("player"):
-	
+		if body.has_method("teleportOut"):
+			await body.teleportOut()
 		var score = calculateScore(body)
 		var grade = getGrade(score.finalScore)
 		score["grade"] = grade

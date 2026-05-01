@@ -191,7 +191,7 @@ jumpForce = 600.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=279742807]
 texture_filter = 5
-scale = Vector2(7.375, 6.8125)
+scale = Vector2(1e-05, 6.813)
 sprite_frames = SubResource("SpriteFrames_it3yl")
 animation = &"death"
 
@@ -207,3 +207,19 @@ zoom = Vector2(1.08, 1.08)
 unique_name_in_owner = true
 visibility_layer = 65
 position = Vector2(52, 40)
+scale = Vector2(1e-05, 1)
+
+[node name="BEAM" type="ColorRect" parent="." unique_id=1880837547]
+offset_left = -43.497704
+offset_top = -1162.7722
+offset_right = 20.502296
+offset_bottom = -746.7722
+scale = Vector2(2, 1e-05)
+pivot_offset = Vector2(32, 0)
+
+[node name="BLUE" type="ColorRect" parent="BEAM" unique_id=1646107729]
+modulate = Color(0.18431373, 0.73333335, 0.92156863, 1)
+layout_mode = 0
+offset_left = 8.0
+offset_right = 56.0
+offset_bottom = 416.0

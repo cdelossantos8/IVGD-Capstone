@@ -43,6 +43,7 @@ func _ready() -> void:
 	camera_2d.zoom = Vector2(cameraZoom, cameraZoom)
 	anim.animation_finished.connect(_on_animation_finished)  
 	equipWeapon(weapons[weaponIndex]) # ADD THIS
+	teleportIn()
 
 
 func _physics_process(delta):
@@ -185,6 +186,30 @@ func pogo(force: float = -1.0):
 	var weapon = weaponSlot.get_child(0)
 	if weapon and weapon.has_method("stopDownAttack"):
 		weapon.stopDownAttack() 
+
+func teleportOut():
+	set_physics_process(false)
+	var teleporting = create_tween()
+	
+	teleporting.tween_property($BEAM, "scale", Vector2(1, 3), 0.1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	teleporting.tween_property($AnimatedSprite2D, "scale", Vector2(1,0), 0.1)
+	teleporting.tween_property($WeaponSlot, "scale", Vector2(1,0), 0.1)
+	teleporting.tween_property($BEAM, "scale", Vector2(0,3), 0.25).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	
+	await teleporting.finished
+
+	
+func teleportIn():
+	
+	var teleporting = create_tween()
+	teleporting.tween_property($BEAM, "scale", Vector2(2, 3), 0.25).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	teleporting.tween_property($AnimatedSprite2D, "scale", Vector2(7.375,6.813), 0.1)
+	teleporting.tween_property($WeaponSlot, "scale", Vector2(1,1), 0.1)
+	teleporting.tween_property($BEAM, "scale", Vector2(0,3), 0.25).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	
+	await teleporting.finished
+	
+	
 
 
 func fallRespawn():
