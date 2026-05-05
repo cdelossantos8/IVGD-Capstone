@@ -73,8 +73,8 @@ func _physics_process(delta):
 		dir = -1
 		
 	#down movement
-	if Input.is_action_just_pressed("moveDown") and (velocity.y > -200 and velocity.y < 250)and not is_on_floor(): 
-		velocity.y = jumpForce * 2 
+	if Input.is_action_just_pressed("moveDown") and not is_on_floor(): 
+		velocity.y = jumpForce * 2.5 
 		downsmash = true
 		var weapon = weaponSlot.get_child(0)
 		if weapon and weapon.has_method("startDownAttack") and weaponIndex == 0:
@@ -205,8 +205,9 @@ func teleportOut():
 	var teleporting = create_tween()
 	
 	teleporting.tween_property($BEAM, "scale", Vector2(1, 3), 0.1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	teleporting.tween_property($WeaponSlot, "scale", Vector2(0,0), 0.1)
 	teleporting.tween_property($AnimatedSprite2D, "scale", Vector2(1,0), 0.1)
-	teleporting.tween_property($WeaponSlot, "scale", Vector2(1,0), 0.1)
+	
 	teleporting.tween_property($BEAM, "scale", Vector2(0,3), 0.25).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	
 	await teleporting.finished

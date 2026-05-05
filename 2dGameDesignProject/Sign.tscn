@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://c82hol2s1ress"]
+
+[ext_resource type="Script" uid="uid://cls032i1q7diy" path="res://Sign.gd" id="1_kffo2"]
+[ext_resource type="Texture2D" uid="uid://dup4egc8mi0yh" path="res://Assets/Sign Posts/04.png" id="2_428cn"]
+[ext_resource type="FontFile" uid="uid://c5n8iaq0jw5h8" path="res://Assets/Daydream DEMO.otf" id="3_6nv8m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tlmse"]
+size = Vector2(224, 84)
+
+[node name="Sign" type="Node2D" unique_id=1548502667]
+script = ExtResource("1_kffo2")
+message = "Use the sword to bounce on enemies!\\n Press 'S' while airborne to pogo!"
+
+[node name="04" type="Sprite2D" parent="." unique_id=903596824]
+position = Vector2(0, -16)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_428cn")
+
+[node name="Label" type="Label" parent="." unique_id=866866924]
+offset_left = -192.0
+offset_top = -320.0
+offset_right = 192.0
+offset_bottom = -64.0
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_6nv8m")
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="." unique_id=92350196]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=869103330]
+position = Vector2(0, -22)
+shape = SubResource("RectangleShape2D_tlmse")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
