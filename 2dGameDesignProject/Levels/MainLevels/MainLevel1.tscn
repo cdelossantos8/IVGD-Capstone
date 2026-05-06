@@ -509,7 +509,7 @@ sources/0 = SubResource("TileSetAtlasSource_dycxk")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dycxk"]
 size = Vector2(1376, 154)
 
-[node name="GauntletTemplate2" type="Node2D" unique_id=1196810243]
+[node name="MainLevel1" type="Node2D" unique_id=1196810243]
 
 [node name="Background" type="Node2D" parent="." unique_id=1861464651]
 

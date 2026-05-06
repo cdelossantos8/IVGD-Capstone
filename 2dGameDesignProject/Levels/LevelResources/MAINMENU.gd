@@ -35,11 +35,11 @@ var messages = [
 	"AHHHHHHHH"
 	]
 
-func _ready(): 
+func _ready():
 	$ColorRect2.modulate.a = 0
 
 func _process(float) -> void:
-	$Node2D/AnimatedSprite2D.play("default")
+	$Background/AnimatedSprite2D.play("default")
 
 func _on_quit_pressed() -> void:
 	QuitLabel.text = messages[messageIndex]
@@ -55,9 +55,9 @@ func _on_quit_pressed() -> void:
 func _on_start_pressed() -> void:
 	var run = create_tween()
 	
-	run.tween_property($Node2D/AnimatedSprite2D, "position", Vector2(190, 428), .5)
-	run.tween_property($Node2D/AnimatedSprite2D, "position", Vector2(1300, 428), 1.5)
-	run.tween_property($ColorRect2, "modulate:a", 1.0, .5)
+	run.tween_property($Background/AnimatedSprite2D, "position", Vector2(190, 428), .5)
+	run.tween_property($Background/AnimatedSprite2D, "position", Vector2(1300, 428), 1.5)
+	run.tween_property($ColorRect2, "modulate:a", 1.0, 1)
 	
 	await run.finished
 	get_tree().change_scene_to_file("res://Levels/LevelResources/levelselect.tscn")

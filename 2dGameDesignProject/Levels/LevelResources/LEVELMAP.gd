@@ -1,6 +1,7 @@
 extends Control
 
 @onready var levels: Array = [$LEVELICON, $LEVELICON2, $LEVELICON3]
+
 @onready var LOADEDLEVELS: Array = [
 	'res://Levels/MainLevels/MainLevel1.tscn',
 	'res://Levels/SwordLevels/SwordLevel3.tscn',
@@ -16,7 +17,7 @@ func _ready() -> void:
 	var move = create_tween()
 	var fade = create_tween()
 	
-	fade.tween_property($ColorRect, "modulate:a", 0.0, .5)
+	fade.tween_property($ColorRect, "modulate:a", 0.0, 1)
 	move.tween_property($PLAYER, "position", Vector2(levels[current_level].global_position.x,levels[current_level].global_position.y), 1.75)
 	
 	await move.finished
@@ -68,6 +69,7 @@ func _input(event):
 		
 		teleport.tween_property($PLAYER/AnimatedSprite2D, "scale", Vector2(1,0), 0.1)
 		teleport.tween_property($PLAYER/BEAM, "scale", Vector2(0,1.13), 0.25).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+		teleport.tween_property($ColorRect, "modulate:a", 1, .5)
 		
 		print("TELEPORTED")
 		

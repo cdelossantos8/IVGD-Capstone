@@ -151,7 +151,8 @@ text = "Restart Level"
 
 [node name="MainMenu" type="Button" parent="Control/ButtonContainer" unique_id=1639137199]
 layout_mode = 2
-text = "Main Menu"
+text = "Level Select
+"
 
 [node name="NextLevelButton" type="Button" parent="Control/ButtonContainer" unique_id=470175701]
 layout_mode = 2
