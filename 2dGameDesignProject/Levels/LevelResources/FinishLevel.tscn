@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cfbf1t6kgjigt" path="res://Levels/LevelResources/finish_level.gd" id="1_8qdck"]
 [ext_resource type="Texture2D" uid="uid://dmy1ngw3wx23c" path="res://Levels/LevelResources/FinishLevelPNG Background Removed.png" id="2_uf2a7"]
 [ext_resource type="Texture2D" uid="uid://cu0j3k160wsbl" path="res://Assets/Legacy-Fantasy - High Forest 2.3/Assets/Props-Rocks.png" id="3_bh1jt"]
+[ext_resource type="AudioStream" uid="uid://c3cuew0kxkdbf" path="res://Assets/Audio Pack - MP3/MP3/Victory! All Clear.mp3" id="4_dcpn6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uf2a7"]
 size = Vector2(104, 88.5)
@@ -380,3 +381,7 @@ layout_mode = 0
 offset_left = 8.0
 offset_right = 56.0
 offset_bottom = 416.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=166330342]
+position = Vector2(8, -80)
+stream = ExtResource("4_dcpn6")

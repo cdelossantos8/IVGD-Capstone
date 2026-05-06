@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cku7e3wve8cjs" path="res://Sprite/character_body_2d.gd" id="1_yk651"]
 [ext_resource type="Texture2D" uid="uid://dm4wy1g1tmtgq" path="res://Sprite/knight.png" id="2_p10r7"]
+[ext_resource type="AudioStream" uid="uid://b3pdfrplkn23j" path="res://Assets/Sounds/Blip Water.wav" id="3_p10r7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yk651"]
 atlas = ExtResource("2_p10r7")
@@ -224,3 +225,7 @@ layout_mode = 0
 offset_left = 8.0
 offset_right = 56.0
 offset_bottom = 416.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1011626561]
+position = Vector2(-8.155819, 15.572843)
+stream = ExtResource("3_p10r7")

@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://cn4dm63xc4qib" path="res://Assets/Legacy-Fantasy - High Forest 2.3/Trees/Green-Tree.png" id="4_ekhcw"]
 [ext_resource type="Texture2D" uid="uid://dm4wy1g1tmtgq" path="res://Sprite/knight.png" id="4_obh8q"]
 [ext_resource type="FontFile" uid="uid://c5n8iaq0jw5h8" path="res://Assets/Daydream DEMO.otf" id="5_obh8q"]
+[ext_resource type="PackedScene" uid="uid://cu7187kps7033" path="res://BGMUSIC.tscn" id="9_vin6i"]
+[ext_resource type="AudioStream" uid="uid://bx2s5w6rd5td5" path="res://Assets/Audio Pack - MP3/MP3/Title Theme.mp3" id="10_34ewx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ymfwh"]
 texture = ExtResource("3_4vjkj")
@@ -4337,6 +4339,11 @@ offset_right = 1152.0
 offset_bottom = 648.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer" parent="." unique_id=1395316269 instance=ExtResource("9_vin6i")]
+stream = ExtResource("10_34ewx")
+volume_db = -0.406
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

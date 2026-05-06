@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cu0j3k160wsbl" path="res://Assets/Legacy-Fantasy - High Forest 2.3/Assets/Props-Rocks.png" id="3_nybwe"]
 [ext_resource type="Texture2D" uid="uid://b2uaxiig5taa8" path="res://Assets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="4_lynu4"]
 [ext_resource type="FontFile" uid="uid://c5n8iaq0jw5h8" path="res://Assets/Daydream DEMO.otf" id="9_g5u44"]
+[ext_resource type="PackedScene" uid="uid://cu7187kps7033" path="res://BGMUSIC.tscn" id="10_vhsel"]
+[ext_resource type="AudioStream" uid="uid://cskr5bn1scvfn" path="res://Assets/Audio Pack - MP3/MP3/Waves in Flight.mp3" id="11_2sppi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r87ds"]
 texture = ExtResource("3_evh4u")
@@ -4694,3 +4696,8 @@ layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer" parent="." unique_id=1395316269 instance=ExtResource("10_vhsel")]
+stream = ExtResource("11_2sppi")
+volume_db = -10.0
+autoplay = true

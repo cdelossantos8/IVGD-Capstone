@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cu7187kps7033"]
+
+[ext_resource type="AudioStream" uid="uid://c851h1to1r8i" path="res://Assets/Audio Pack - MP3/MP3/Crimson Drive.mp3" id="1_miicw"]
+
+[node name="BGMUSIC" type="AudioStreamPlayer" unique_id=1395316269]
+stream = ExtResource("1_miicw")

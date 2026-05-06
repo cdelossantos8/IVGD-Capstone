@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://v6vwgm82ln6m"
+path="res://.godot/imported/For Me.mp3-b4de3ff25172f5e6896b54a18f1bb303.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio Pack - MP3/MP3/For Me.mp3"
+dest_files=["res://.godot/imported/For Me.mp3-b4de3ff25172f5e6896b54a18f1bb303.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

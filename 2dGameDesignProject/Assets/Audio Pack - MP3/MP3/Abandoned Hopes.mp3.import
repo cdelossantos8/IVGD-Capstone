@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cpb0dpf0mptt0"
+path="res://.godot/imported/Abandoned Hopes.mp3-c902a36a166610bbf10bfc2b4f6b3b07.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio Pack - MP3/MP3/Abandoned Hopes.mp3"
+dest_files=["res://.godot/imported/Abandoned Hopes.mp3-c902a36a166610bbf10bfc2b4f6b3b07.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

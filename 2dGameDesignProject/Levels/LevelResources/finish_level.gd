@@ -20,18 +20,21 @@ func _ready():
 
 func _onBodyEntered(body):
 	if body.is_in_group("player"):
+		%BGMUSIC.queue_free() #remove the whole stream player for now, there was a bug when clicking "level select"
+		$AudioStreamPlayer2D.play()
 		if body.has_method("teleportOut"):
 			await body.teleportOut()
 		var score = calculateScore(body)
 		var grade = getGrade(score.finalScore)
 		score["grade"] = grade
+		await $AudioStreamPlayer2D.finished
 		get_tree().paused = true
 		var levelPath = get_tree().current_scene.scene_file_path
 		ScoreManager.saveScore(levelPath, score.finalScore, score.grade)
 		ScoreManager.showScore(score)
 		if SceneManager.canAdvance(grade):
 			SceneManager.unlockNextLevel(levelPath)
-
+		
 func getGrade(score : float) -> String:
 	if score >= sMinScore:
 		return "S"

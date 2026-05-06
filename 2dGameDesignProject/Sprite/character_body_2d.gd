@@ -201,6 +201,7 @@ func pogo(force: float = -1.0):
 		weapon.stopDownAttack() 
 
 func teleportOut():
+	$AudioStreamPlayer2D.play()
 	set_physics_process(false)
 	var teleporting = create_tween()
 	
@@ -214,7 +215,7 @@ func teleportOut():
 
 	
 func teleportIn():
-	
+	$AudioStreamPlayer2D.play()
 	var teleporting = create_tween()
 	teleporting.tween_property($BEAM, "scale", Vector2(2, 3), 0.25).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	teleporting.tween_property($AnimatedSprite2D, "scale", Vector2(7.375,6.813), 0.1)

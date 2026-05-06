@@ -4,8 +4,8 @@ extends Control
 
 @onready var LOADEDLEVELS: Array = [
 	'res://Levels/MainLevels/MainLevel1.tscn',
-	'res://Levels/SwordLevels/SwordLevel3.tscn',
-	'res://Levels/GauntletsLevels/GauntletsLevel3.tscn'
+	'res://Levels/MainLevels/MainLevel2.scn',
+	'res://Levels/MainLevels/MainLevel3.tscn'
 ]
 
 var CompletedLevels : Array = []
@@ -61,7 +61,7 @@ func _input(event):
 	
 	if event.is_action_pressed("ui_accept") && isMoving == false:
 		$PLAYER/AnimatedSprite2D.stop()
-		
+		$AudioStreamPlayer.stream_paused = true
 		var teleport = create_tween()
 		move.tween_property($PLAYER, "scale:x", 1, 0)
 		teleport.tween_property($PLAYER/AnimatedSprite2D, "modulate", Color.SKY_BLUE, 0)

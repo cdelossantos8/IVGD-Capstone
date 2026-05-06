@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bwmfjoh2t603g"
+path="res://.godot/imported/N E S Y X.mp3-53214277e8a3d6a219e5ef862fb846f3.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio Pack - MP3/MP3/N E S Y X.mp3"
+dest_files=["res://.godot/imported/N E S Y X.mp3-53214277e8a3d6a219e5ef862fb846f3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -244,11 +244,11 @@ animations = [{
 size = Vector2(10.377, 38.467)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fcdv1"]
-size = Vector2(50.45671, 54.259407)
+size = Vector2(39.622486, 50.28038)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iqfuw"]
-radius = 16.126877
-height = 47.18791
+radius = 14.683359
+height = 35.49832
 
 [node name="Skeleton" type="CharacterBody2D" unique_id=1046337729]
 scale = Vector2(1.6152468, 1.3822494)
@@ -258,21 +258,19 @@ script = ExtResource("1_fcdv1")
 position = Vector2(1.2382011, 0.7234583)
 scale = Vector2(1.8250564, 1.8913183)
 sprite_frames = SubResource("SpriteFrames_euxau")
-animation = &"Death"
-frame = 7
-frame_progress = 0.5257824
+animation = &"Idle"
 
 [node name="PhysicsCollision" type="CollisionShape2D" parent="." unique_id=1761152229]
-position = Vector2(-0.61910003, 15.916077)
-scale = Vector2(2.399999, 2.399999)
+position = Vector2(-0.6191, 15.916076)
+scale = Vector2(2.3999987, 2.3999987)
 shape = SubResource("RectangleShape2D_6vt0i")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=2113888661]
 unique_name_in_owner = true
 
 [node name="HitboxShape" type="CollisionShape2D" parent="Hitbox" unique_id=1476053682]
-position = Vector2(-1.8573014, 34.726006)
-scale = Vector2(0.99999917, 0.99999917)
+position = Vector2(-7.380251e-07, 36.71548)
+scale = Vector2(0.99999845, 0.99999845)
 shape = SubResource("RectangleShape2D_fcdv1")
 
 [node name="Headshot" type="Area2D" parent="." unique_id=128045750]

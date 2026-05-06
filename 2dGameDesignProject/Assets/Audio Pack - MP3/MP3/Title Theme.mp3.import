@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bx2s5w6rd5td5"
+path="res://.godot/imported/Title Theme.mp3-616828c5c18be3ff651973f238d64b11.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio Pack - MP3/MP3/Title Theme.mp3"
+dest_files=["res://.godot/imported/Title Theme.mp3-616828c5c18be3ff651973f238d64b11.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

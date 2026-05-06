@@ -113,11 +113,13 @@ func displayScore(scoreData: Dictionary):
 		button_container.modulate.a = 0.0
 	)
 	tween.tween_property(button_container, "modulate:a", 1.0, 0.5)
+	
 func _getWeaponName() -> String:
 	for weapon: String in SceneManager.levelPaths:
 		if currentLevelScene in SceneManager.levelPaths[weapon]:
 			return weapon
 	return ""
+
 func colorGrade(grade : String):
 	match grade:
 		"S":

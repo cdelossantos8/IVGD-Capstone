@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dmq20s0344j2m"
+path="res://.godot/imported/The Way You Love.mp3-8bd30736d7d2c9eddb46b8f82000287c.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio Pack - MP3/MP3/The Way You Love.mp3"
+dest_files=["res://.godot/imported/The Way You Love.mp3-8bd30736d7d2c9eddb46b8f82000287c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

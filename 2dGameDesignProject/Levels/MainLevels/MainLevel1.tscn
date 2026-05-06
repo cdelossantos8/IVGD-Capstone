@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dnphqkwoyrt06" path="res://UI/UI.tscn" id="7_0kdua"]
 [ext_resource type="PackedScene" uid="uid://c82hol2s1ress" path="res://Sign.tscn" id="7_rxouh"]
 [ext_resource type="PackedScene" uid="uid://b8gs2ueysl86o" path="res://Levels/LevelResources/FinishLevel.tscn" id="8_respb"]
+[ext_resource type="PackedScene" uid="uid://cu7187kps7033" path="res://BGMUSIC.tscn" id="9_uo1wr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wkt8g"]
 size = Vector2(56, 696)
@@ -686,3 +687,7 @@ scale = Vector2(1.325, 1.134)
 [node name="Skeleton11" parent="ENEMIES" unique_id=790578399 instance=ExtResource("2_nxm1n")]
 position = Vector2(5436, 520)
 scale = Vector2(1.325, 1.134)
+
+[node name="BGMUSIC" parent="." unique_id=1395316269 instance=ExtResource("9_uo1wr")]
+unique_name_in_owner = true
+autoplay = true

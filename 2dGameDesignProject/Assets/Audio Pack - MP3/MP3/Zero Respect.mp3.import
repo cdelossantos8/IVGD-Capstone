@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cif4pj640msdi"
+path="res://.godot/imported/Zero Respect.mp3-0580242e83a3e4c4ac85e42fd3fef2a7.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio Pack - MP3/MP3/Zero Respect.mp3"
+dest_files=["res://.godot/imported/Zero Respect.mp3-0580242e83a3e4c4ac85e42fd3fef2a7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
