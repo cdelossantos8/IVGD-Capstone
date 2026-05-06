@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var weaponSlot: Node2D = %WeaponSlot
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
+var EndOfLevel : bool = false
 var weaponIndex : int = 0
 
 var switchCooldown : float = 0.5
@@ -79,11 +80,13 @@ func _physics_process(delta):
 		var weapon = weaponSlot.get_child(0)
 		if weapon and weapon.has_method("startDownAttack") and weaponIndex == 0:
 			var down = create_tween()
-			down.tween_property(camera_2d, "offset", Vector2(0, 100), 0.25)
+			down.tween_property(camera_2d, "offset", Vector2(0, 150), 0.25)
 			
 			weapon.startDownAttack()
-			while not is_on_floor():
-				await get_tree().process_frame
+			
+			
+			#while not is_on_floor():
+			#	await get_tree().process_frame
 			
 			await get_tree().create_timer(0.1).timeout
 			
@@ -151,13 +154,8 @@ func equipWeapon(weaponScene: PackedScene):
 	weapon.setup(self)
 	
 func switchWeapon():
-	
-	
-	weaponIndex += 1
-	
+	weaponIndex += 1	
 	weaponIndex = weaponIndex % weapons.size()
-	
-	
 	equipWeapon(weapons[weaponIndex])
 	
 	
@@ -224,8 +222,6 @@ func teleportIn():
 	
 	await teleporting.finished
 	
-	
-
 
 func fallRespawn():
 	takeDamage(25.0)

@@ -5,7 +5,7 @@ extends Control
 @onready var LOADEDLEVELS: Array = [
 	'res://Levels/MainLevels/MainLevel1.tscn',
 	'res://Levels/MainLevels/MainLevel2.scn',
-	'res://Levels/MainLevels/MainLevel3.tscn'
+	'res://Levels/MainLevels/MainLevel3.scn'
 ]
 
 var CompletedLevels : Array = []
@@ -39,7 +39,7 @@ func _process(float):
 func _input(event):
 	var move = create_tween()
 	
-	if event.is_action_pressed("moveLeft") and current_level > 0:
+	if event.is_action_pressed("moveLeft") and current_level > 0 and isMoving == false:
 		current_level -= 1
 		isMoving = true
 		move.tween_property($PLAYER, "scale:x", -1, 0)
@@ -49,7 +49,7 @@ func _input(event):
 		isMoving = false
 		#$PLAYER.global_position = levels[current_level].global_position
 	
-	if event.is_action_pressed("moveRight") and current_level < levels.size() -1:
+	if event.is_action_pressed("moveRight") and current_level < levels.size() -1 and isMoving == false:
 		current_level += 1
 		isMoving = true
 		move.tween_property($PLAYER, "scale:x", 1, 0)
@@ -60,9 +60,11 @@ func _input(event):
 		#$PLAYER.global_position = levels[current_level].global_position
 	
 	if event.is_action_pressed("ui_accept") && isMoving == false:
+		isMoving = true
 		$PLAYER/AnimatedSprite2D.stop()
 		$AudioStreamPlayer.stream_paused = true
 		var teleport = create_tween()
+		$PLAYER/AudioStreamPlayer2D.play()
 		move.tween_property($PLAYER, "scale:x", 1, 0)
 		teleport.tween_property($PLAYER/AnimatedSprite2D, "modulate", Color.SKY_BLUE, 0)
 		teleport.tween_property($PLAYER/BEAM, "scale", Vector2(1, 1.13), 0.1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)

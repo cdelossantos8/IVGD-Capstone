@@ -100,7 +100,6 @@ func flashRed():
 
 func die():
 	set_physics_process(false)
-	
 	# Disable collisions
 	disableAllCollsion()
 	anim.play("Death")

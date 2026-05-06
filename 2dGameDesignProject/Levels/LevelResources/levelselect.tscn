@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c57k0l5g0mxgl" path="res://Assets/Legacy-Fantasy - High Forest 2.3/Trees/Background.png" id="3_evh4u"]
 [ext_resource type="Texture2D" uid="uid://cu0j3k160wsbl" path="res://Assets/Legacy-Fantasy - High Forest 2.3/Assets/Props-Rocks.png" id="3_nybwe"]
 [ext_resource type="Texture2D" uid="uid://b2uaxiig5taa8" path="res://Assets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="4_lynu4"]
+[ext_resource type="AudioStream" uid="uid://b3pdfrplkn23j" path="res://Assets/Sounds/Blip Water.wav" id="9_2sppi"]
 [ext_resource type="FontFile" uid="uid://c5n8iaq0jw5h8" path="res://Assets/Daydream DEMO.otf" id="9_g5u44"]
 [ext_resource type="PackedScene" uid="uid://cu7187kps7033" path="res://BGMUSIC.tscn" id="10_vhsel"]
 [ext_resource type="AudioStream" uid="uid://cskr5bn1scvfn" path="res://Assets/Audio Pack - MP3/MP3/Waves in Flight.mp3" id="11_2sppi"]
@@ -4636,6 +4637,7 @@ offset_bottom = 469.0
 level_index = 2
 
 [node name="LEVELICON3" parent="." unique_id=1084620115 instance=ExtResource("1_ymjx6")]
+modulate = Color(1, 0.043137256, 0, 1)
 layout_mode = 0
 offset_left = 833.0
 offset_top = 405.0
@@ -4673,6 +4675,9 @@ layout_mode = 0
 offset_left = 8.0
 offset_right = 56.0
 offset_bottom = 416.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PLAYER" unique_id=1722689755]
+stream = ExtResource("9_2sppi")
 
 [node name="instructions" type="Label" parent="." unique_id=1342791089]
 layout_mode = 0
