@@ -1,9 +1,14 @@
 [gd_scene format=3 uid="uid://dsiqf6xrdj7qw"]
 
 [ext_resource type="Texture2D" uid="uid://bbw3evjifwyxb" path="res://Assets/FinalBoss/Bringer-of-Death-SpritSheet.png" id="1_effnk"]
+[ext_resource type="Script" uid="uid://dpd4v1civew8i" path="res://Enemies/finalboss.gd" id="1_ljm33"]
+[ext_resource type="Script" uid="uid://kyu0h4bo65b6" path="res://STATES.gd" id="2_5rl2e"]
+[ext_resource type="Script" uid="uid://colrsyu5bpkbe" path="res://Enemies/FiniteStateMachine.gd" id="2_54lsq"]
+[ext_resource type="Script" uid="uid://b7utbtpbwggqj" path="res://Enemies/idle.gd" id="3_dr60k"]
+[ext_resource type="Script" uid="uid://dtyyo0r5d1vf0" path="res://Enemies/walking.gd" id="5_62cjh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_effnk"]
-size = Vector2(26, 58)
+size = Vector2(29, 58)
 
 [sub_resource type="Animation" id="Animation_effnk"]
 length = 0.001
@@ -23,6 +28,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_5rl2e"]
 resource_name = "attack"
 length = 1.125
+loop_mode = 1
 step = 0.125
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -74,6 +80,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_dr60k"]
 resource_name = "idle"
+loop_mode = 1
 step = 0.125
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -86,6 +93,23 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_dl0fm"]
+resource_name = "ranged_attack"
+length = 1.125
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [39, 40, 41, 42, 43, 44, 45, 46, 47]
 }
 
 [sub_resource type="Animation" id="Animation_62cjh"]
@@ -112,19 +136,54 @@ _data = {
 &"death": SubResource("Animation_ljm33"),
 &"hurt": SubResource("Animation_54lsq"),
 &"idle": SubResource("Animation_dr60k"),
+&"ranged_attack": SubResource("Animation_dl0fm"),
 &"walking": SubResource("Animation_62cjh")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_effnk"]
+radius = 125.0
+
 [node name="FinalBoss" type="CharacterBody2D" unique_id=1791776071]
+script = ExtResource("1_ljm33")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=591412647]
 texture = ExtResource("1_effnk")
+offset = Vector2(-35, 0)
 hframes = 8
 vframes = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1486724243]
-position = Vector2(35, 19)
+position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_effnk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2017708621]
 libraries/ = SubResource("AnimationLibrary_ljm33")
+autoplay = &"idle"
+
+[node name="PlayerDetection" type="Area2D" parent="." unique_id=871342200]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection" unique_id=1785674315]
+shape = SubResource("CircleShape2D_effnk")
+
+[node name="FiniteStateMachine" type="Node2D" parent="." unique_id=1289254211]
+script = ExtResource("2_54lsq")
+
+[node name="idle" type="Node2D" parent="FiniteStateMachine" unique_id=1455265419]
+script = ExtResource("3_dr60k")
+
+[node name="attack" type="Node2D" parent="FiniteStateMachine" unique_id=1076957233]
+script = ExtResource("2_5rl2e")
+
+[node name="hurt" type="Node2D" parent="FiniteStateMachine" unique_id=1860807878]
+script = ExtResource("2_5rl2e")
+
+[node name="ranged_attack" type="Node2D" parent="FiniteStateMachine" unique_id=1708766842]
+script = ExtResource("2_5rl2e")
+
+[node name="walking" type="Node2D" parent="FiniteStateMachine" unique_id=264714620]
+script = ExtResource("5_62cjh")
+
+[node name="death" type="Node2D" parent="FiniteStateMachine" unique_id=1821370794]
+script = ExtResource("2_5rl2e")
+
+[connection signal="body_entered" from="PlayerDetection" to="FiniteStateMachine/idle" method="_on_player_detection_body_entered"]
