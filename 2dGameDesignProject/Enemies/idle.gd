@@ -1,6 +1,6 @@
 extends State
 
-@onready var collision = $"../../PlayerDetection/CollisionShape2D"
+@onready var collision = $"../../PlayerDetection/DetectionArea"
 
 var player_entered: bool = false: 
 	set(value):

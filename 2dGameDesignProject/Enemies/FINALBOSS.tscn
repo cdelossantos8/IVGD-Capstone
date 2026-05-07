@@ -2,12 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://bbw3evjifwyxb" path="res://Assets/FinalBoss/Bringer-of-Death-SpritSheet.png" id="1_effnk"]
 [ext_resource type="Script" uid="uid://dpd4v1civew8i" path="res://Enemies/finalboss.gd" id="1_ljm33"]
-[ext_resource type="Script" uid="uid://kyu0h4bo65b6" path="res://STATES.gd" id="2_5rl2e"]
 [ext_resource type="Script" uid="uid://colrsyu5bpkbe" path="res://Enemies/FiniteStateMachine.gd" id="2_54lsq"]
 [ext_resource type="Script" uid="uid://b7utbtpbwggqj" path="res://Enemies/idle.gd" id="3_dr60k"]
 [ext_resource type="Script" uid="uid://dtyyo0r5d1vf0" path="res://Enemies/walking.gd" id="5_62cjh"]
 [ext_resource type="Script" uid="uid://dj45p7wpxbof4" path="res://Enemies/attack.gd" id="5_dl0fm"]
+[ext_resource type="Script" uid="uid://cjjgd1wv2sa2v" path="res://Enemies/hurt.gd" id="6_sjo2h"]
 [ext_resource type="Script" uid="uid://64ykmek6tm8k" path="res://Enemies/ranged_attack.gd" id="7_mo1id"]
+[ext_resource type="Script" uid="uid://txl44e0qb3ia" path="res://Enemies/death.gd" id="9_sjo2h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_effnk"]
 size = Vector2(29, 58)
@@ -25,6 +26,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_5rl2e"]
@@ -61,11 +74,22 @@ tracks/0/keys = {
 "update": 1,
 "values": [29, 30, 31, 32, 33, 34, 35, 36, 37, 38]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_54lsq"]
 resource_name = "hurt"
 length = 0.375
-loop_mode = 1
 step = 0.125
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -145,6 +169,9 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_effnk"]
 radius = 125.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mo1id"]
+size = Vector2(32, 56)
+
 [node name="FinalBoss" type="CharacterBody2D" unique_id=1791776071]
 script = ExtResource("1_ljm33")
 
@@ -154,7 +181,7 @@ offset = Vector2(-35, 0)
 hframes = 8
 vframes = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1486724243]
+[node name="Physics" type="CollisionShape2D" parent="." unique_id=1486724243]
 position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_effnk")
 
@@ -164,7 +191,7 @@ autoplay = &"idle"
 
 [node name="PlayerDetection" type="Area2D" parent="." unique_id=871342200]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection" unique_id=1785674315]
+[node name="DetectionArea" type="CollisionShape2D" parent="PlayerDetection" unique_id=1785674315]
 shape = SubResource("CircleShape2D_effnk")
 
 [node name="FiniteStateMachine" type="Node2D" parent="." unique_id=1289254211]
@@ -177,7 +204,7 @@ script = ExtResource("3_dr60k")
 script = ExtResource("5_dl0fm")
 
 [node name="hurt" type="Node2D" parent="FiniteStateMachine" unique_id=1860807878]
-script = ExtResource("2_5rl2e")
+script = ExtResource("6_sjo2h")
 
 [node name="ranged_attack" type="Node2D" parent="FiniteStateMachine" unique_id=1708766842]
 script = ExtResource("7_mo1id")
@@ -186,10 +213,16 @@ script = ExtResource("7_mo1id")
 script = ExtResource("5_62cjh")
 
 [node name="death" type="Node2D" parent="FiniteStateMachine" unique_id=1821370794]
-script = ExtResource("2_5rl2e")
+script = ExtResource("9_sjo2h")
 
 [node name="Timer" type="Timer" parent="." unique_id=1841717488]
 wait_time = 4.0
 one_shot = true
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1819398735]
+
+[node name="Box" type="CollisionShape2D" parent="Hitbox" unique_id=1021077019]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_mo1id")
 
 [connection signal="body_entered" from="PlayerDetection" to="FiniteStateMachine/idle" method="_on_player_detection_body_entered"]
