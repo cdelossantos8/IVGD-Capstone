@@ -12,7 +12,7 @@ var messages = [
 	
 	"Coward!", 
 	
-	"Thou wilt never save Sir John at this point!", 
+	"Thou wilt never defeat the Undead Lord at this point!", 
 	
 	"Just play the game.", 
 	
@@ -26,7 +26,7 @@ var messages = [
 	
 	"Take no for an answer!",
 	 
-	"Its for the good of Sir John!", "*yawn", "Thou could hast played a whole level by now", 
+	"Its for the good of the kingdom!", "*yawn", "Thou could hast played a whole level by now", 
 	
 	"IT WONT WORK STOP PRESSING ME", 
 	
@@ -36,10 +36,11 @@ var messages = [
 	]
 
 func _ready(): 
-	$ColorRect2.modulate.a = 0
-
-func _process(float) -> void:
 	$Node2D/AnimatedSprite2D.play("default")
+	var fadeIn = create_tween()
+	
+	fadeIn.tween_property($ColorRect2, 'modulate:a', 0.0, 1.25)
+	await fadeIn.finished
 
 func _on_quit_pressed() -> void:
 	QuitLabel.text = messages[messageIndex]

@@ -48,7 +48,7 @@ func buildTranscript():
 	
 	for weapon : String in SceneManager.levelPaths:
 		var levels : Array = SceneManager.levelPaths[weapon]
-		var labels : Array = weaponLabels[weapon]
+		#var labels : Array = weaponLabels[weapon]
 		
 		## Fill in labels that have a corresponding level
 		for i : int in range(levels.size()):
@@ -59,13 +59,13 @@ func buildTranscript():
 			totalGPA += gpa
 			levelCount += 1
 			
-			labels[i].text = "Lvl " + str(i + 1) + ": " + grade
-			colorLabel(labels[i], grade)
-			allLabels.append(labels[i])
+			#labels[i].text = "Lvl " + str(i + 1) + ": " + grade
+			#colorLabel(labels[i], grade)
+			#allLabels.append(labels[i])
 		
 		## Hide any extra labels that don't have a level yet
-		for i : int in range(levels.size(), labels.size()):
-			labels[i].visible = false
+		#for i : int in range(levels.size(), labels.size()):
+			#labels[i].visible = false
 	
 	var finalGPA : float = totalGPA / levelCount if levelCount > 0 else 0.0
 	gpaLabel.text = "FINAL GPA: " + str(snapped(finalGPA, 0.01))

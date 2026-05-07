@@ -5,23 +5,10 @@ var nextLevelMap : Dictionary = {}
 var unlockedLevels : Dictionary = {}
 
 var levelPaths : Dictionary = {
-	"Sword": [
-		"res://Levels/SwordLevels/SwordLevel1.tscn",
-		"res://Levels/SwordLevels/SwordLevel2.tscn",
-		"res://Levels/SwordLevels/SwordLevel3.tscn",
-		"res://Levels/SwordLevels/SwordLevel4.tscn",
-	],
-	"Bow": [
-		"res://Levels/BowLevels/BowLevel1.tscn",
-		"res://Levels/BowLevels/BowLevel2.tscn",
-		"res://Levels/BowLevels/BowLevel3.tscn",
-		"res://Levels/BowLevels/BowLevel4.tscn",
-	],
-	"Gauntlets": [
-		"res://Levels/GauntletsLevels/GauntletLevel1.tscn",
-		"res://Levels/GauntletsLevels/GauntletLevel2.tscn",
-		"res://Levels/GauntletsLevels/GauntletsLevel3.tscn",
-		"res://Levels/GauntletsLevels/GauntletsLevel4.tscn",
+	"MainLevels": [
+		"res://Levels/MainLevels/MainLevel1.tscn",
+		"res://Levels/MainLevels/MainLevel2.scn",
+		"res://Levels/MainLevels/MainLevel3.scn"
 	]
 }
 
@@ -68,7 +55,7 @@ func goToNextLevel(currentLevelPath : String) -> void:
 	else:
 		get_tree().paused = false
 		if areAllLevelsCompleted():
-			get_tree().change_scene_to_file("res://Levels/LevelResources/FinalTranscript.tscn")
+			get_tree().change_scene_to_file("res://Levels/Ending.tscn")
 		else:
 			get_tree().change_scene_to_file("res://UI/MainMenu.tscn")
 
@@ -76,7 +63,7 @@ func goToMainMenu() -> void:
 	ScoreManager.resetLevel()
 	get_tree().paused = false
 	if areAllLevelsCompleted():
-		get_tree().change_scene_to_file("res://Levels/LevelResources/FinalTranscript.tscn")
+		get_tree().change_scene_to_file("res://Levels/Ending.tscn")
 	else:
 		get_tree().change_scene_to_file("res://Levels/LevelResources/levelselect.tscn")
 

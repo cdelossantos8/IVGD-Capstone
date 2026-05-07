@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cq43bmbyaxqc5"]
+
+[ext_resource type="Script" uid="uid://dxd8a283ps7jx" path="res://Levels/MainLevels/SpawnSkeleton.gd" id="1_5dl8f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2x48v"]
+size = Vector2(40, 160)
+
+[node name="SpawnSignal" type="Area2D" unique_id=979995471]
+collision_layer = 8
+script = ExtResource("1_5dl8f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=522211763]
+shape = SubResource("RectangleShape2D_2x48v")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
