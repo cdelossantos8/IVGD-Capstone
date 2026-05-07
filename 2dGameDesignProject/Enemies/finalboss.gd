@@ -14,16 +14,17 @@ var direction: int
 func _ready():
 	set_physics_process(false)
 	
+	
 func takeDamage(amount: float):
 	health -= amount
 	
 	print("Enemy took ", amount, " damage! Health: ", health)
 
-	if health >= 0:
-		state_machine.change_state('hurt')
-	else:
+	if health <= 0:
 		die()
-
+	else:
+		state_machine.change_state('hurt')
+		
 func die():
 	$PlayerDetection/DetectionArea.set_deferred("disabled", true)
 	$Physics.set_deferred("disabled", true)

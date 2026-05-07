@@ -18,6 +18,7 @@ var startingLabelPos : Vector2
 var collisionBoxes : Array = [ $PhysicsCollision, $Hitbox/HitboxShape, $Headshot/HeadshotShape]
 @onready var physics_collision: CollisionShape2D = $PhysicsCollision
 var isKnockedBack : bool = false
+@onready var player = get_parent().get_node("CharacterBody2D")
 
 
 func _ready():
@@ -45,7 +46,21 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	
+	var distanceX = player.global_position.x - global_position.x
+	var distance = abs(distanceX)
+	
+	if distance > 1:
+		direction = sign(distanceX)
+	
+	anim.flip_h = direction < 0
+		
 	velocity.x = speed * direction + knockbackVelocity.x
+	
+	if not is_on_floor():
+		velocity.y += gravity * delta
+	else:
+		velocity.y = 0
+	
 	move_and_slide()
 	
 	# decay knockback over time
@@ -55,12 +70,7 @@ func _physics_process(delta: float) -> void:
 			print("Knockback ended, velocity was: ", knockbackVelocity.length())
 		isKnockedBack = false
 	
-	traveled_distance += abs(speed * direction * delta)
 	
-	if traveled_distance >= max_walk_distance:
-		direction *= -1
-		traveled_distance = 0
-		anim.flip_h = direction == -1
 
 func applyKnockback(dir: Vector2, force: float):
 	knockbackVelocity = dir.normalized() * force

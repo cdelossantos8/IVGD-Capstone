@@ -12,5 +12,5 @@ func _ready():
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		body.takeDamage(25.00)
+		body.takeDamage(50.00)
 		

@@ -6,8 +6,10 @@ func enter():
 	
 	animation_player.play("hurt")
 	await animation_player.animation_finished
-
-	get_parent().change_state("walking")
+	
+	if get_parent().current_state.name == 'hurt':
+		get_parent().change_state("walking")
 		
 func exit():
 	super.exit()
+	
