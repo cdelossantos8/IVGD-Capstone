@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://be4nl2ofjxkub" path="res://Levels/LevelResources/catch_fall.gd" id="4_i3yqg"]
 [ext_resource type="PackedScene" uid="uid://dbq2vts66xtpi" path="res://Sprite/Character.tscn" id="5_6hrob"]
 [ext_resource type="PackedScene" uid="uid://dnphqkwoyrt06" path="res://UI/UI.tscn" id="7_0kdua"]
-[ext_resource type="PackedScene" uid="uid://c82hol2s1ress" path="res://Sign.tscn" id="7_rxouh"]
+[ext_resource type="PackedScene" uid="uid://c82hol2s1ress" path="res://Levels/LevelResources/Sign.tscn" id="7_rxouh"]
 [ext_resource type="PackedScene" uid="uid://b8gs2ueysl86o" path="res://Levels/LevelResources/FinishLevel.tscn" id="8_respb"]
 [ext_resource type="PackedScene" uid="uid://cu7187kps7033" path="res://BGMUSIC.tscn" id="9_uo1wr"]
 

@@ -2,7 +2,7 @@ extends CharacterBody2D
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 const SPEED = 300.0
 @export var health: float = 100.0
-@export var speed: float = 50.0
+@export var speed: float = 150
 @export var gravity: float = 900.0
 @export var damage : float = 20.0
 var direction = 1

@@ -348,7 +348,7 @@ height = 50.8664
 
 [node name="Skeleton" type="CharacterBody2D" unique_id=1046337729]
 scale = Vector2(1.6152468, 1.3822494)
-collision_layer = 4
+collision_mask = 5
 script = ExtResource("1_2aq5j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=118319019]

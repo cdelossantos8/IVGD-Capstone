@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://c5n8iaq0jw5h8" path="res://Assets/Daydream DEMO.otf" id="3_6nv8m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tlmse"]
-size = Vector2(112, 84)
+size = Vector2(174, 84)
 
 [node name="Sign" type="Node2D" unique_id=1548502667]
 script = ExtResource("1_kffo2")
@@ -33,7 +33,7 @@ vertical_alignment = 1
 collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=869103330]
-position = Vector2(0, -22)
+position = Vector2(1, -22)
 shape = SubResource("RectangleShape2D_tlmse")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

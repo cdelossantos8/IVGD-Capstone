@@ -442,5 +442,5 @@ horizontal_alignment = 1
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=760020819]
 position = Vector2(112, 32)
 sprite_frames = SubResource("SpriteFrames_av5qh")
-frame_progress = 0.98514897
+frame_progress = 0.9119138
 flip_h = true

@@ -29,6 +29,7 @@ func die():
 	$PlayerDetection/DetectionArea.set_deferred("disabled", true)
 	$Physics.set_deferred("disabled", true)
 	$Hitbox/Box.set_deferred("disabled", true)
+	ScoreManager.registerKill()
 	state_machine.change_state('death')
 
 
