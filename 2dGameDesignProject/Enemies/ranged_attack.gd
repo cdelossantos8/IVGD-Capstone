@@ -11,7 +11,7 @@ func enter():
 	await animation_player.animation_finished
 	isAttacking = false
 	
-	owner.get_node("Timer").start()
+	owner.get_node("AttackTimer").start()
 	owner.set_physics_process(false)
 	var ranged_attack = spell.instantiate()
 	get_tree().current_scene.add_child(ranged_attack)

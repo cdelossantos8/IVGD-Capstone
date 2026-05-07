@@ -89,6 +89,58 @@ region = Rect2(576, 0, 96, 64)
 atlas = ExtResource("1_moboe")
 region = Rect2(672, 0, 96, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4qo8"]
+atlas = ExtResource("2_iqfuw")
+region = Rect2(1152, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqy0x"]
+atlas = ExtResource("2_iqfuw")
+region = Rect2(1056, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajkuf"]
+atlas = ExtResource("2_iqfuw")
+region = Rect2(960, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwin8"]
+atlas = ExtResource("2_iqfuw")
+region = Rect2(864, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lvgl"]
+atlas = ExtResource("2_iqfuw")
+region = Rect2(768, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6m3jb"]
+atlas = ExtResource("2_iqfuw")
+region = Rect2(672, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_087el"]
+atlas = ExtResource("2_iqfuw")
+region = Rect2(576, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_codqr"]
+atlas = ExtResource("2_iqfuw")
+region = Rect2(480, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rogk"]
+atlas = ExtResource("2_iqfuw")
+region = Rect2(384, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgver"]
+atlas = ExtResource("2_iqfuw")
+region = Rect2(288, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6i0s"]
+atlas = ExtResource("2_iqfuw")
+region = Rect2(192, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7jw5"]
+atlas = ExtResource("2_iqfuw")
+region = Rect2(96, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0p1x"]
+atlas = ExtResource("2_iqfuw")
+region = Rect2(0, 0, 96, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_1sjsd"]
 atlas = ExtResource("2_nmdtn")
 region = Rect2(0, 0, 96, 64)
@@ -206,6 +258,50 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_j4qo8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqy0x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajkuf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwin8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lvgl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6m3jb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_087el")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_codqr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rogk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wgver")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6i0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7jw5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0p1x")
+}],
+"loop": true,
+"name": &"Rise",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_1sjsd")
 }, {
 "duration": 1.0,
@@ -244,11 +340,11 @@ animations = [{
 size = Vector2(10.377, 38.467)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fcdv1"]
-size = Vector2(39.622486, 50.28038)
+size = Vector2(39.622486, 56.06805)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iqfuw"]
 radius = 14.683359
-height = 35.49832
+height = 50.8664
 
 [node name="Skeleton" type="CharacterBody2D" unique_id=1046337729]
 scale = Vector2(1.6152468, 1.3822494)
@@ -258,7 +354,7 @@ script = ExtResource("1_fcdv1")
 position = Vector2(1.2382011, 0.7234583)
 scale = Vector2(1.8250564, 1.8913183)
 sprite_frames = SubResource("SpriteFrames_euxau")
-animation = &"Idle"
+animation = &"Rise"
 
 [node name="PhysicsCollision" type="CollisionShape2D" parent="." unique_id=1761152229]
 position = Vector2(-0.6191, 15.916076)
@@ -269,8 +365,8 @@ shape = SubResource("RectangleShape2D_6vt0i")
 unique_name_in_owner = true
 
 [node name="HitboxShape" type="CollisionShape2D" parent="Hitbox" unique_id=1476053682]
-position = Vector2(-7.380251e-07, 36.71548)
-scale = Vector2(0.99999845, 0.99999845)
+position = Vector2(-7.38025e-07, 33.821644)
+scale = Vector2(0.99999833, 0.9999984)
 shape = SubResource("RectangleShape2D_fcdv1")
 
 [node name="Headshot" type="Area2D" parent="." unique_id=128045750]

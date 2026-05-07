@@ -31,7 +31,6 @@ func die():
 	state_machine.change_state('death')
 
 
-
 func _physics_process(delta):
 	var distanceX = player.global_position.x - global_position.x
 	var distance = abs(distanceX)

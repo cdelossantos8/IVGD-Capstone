@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://cjjgd1wv2sa2v" path="res://Enemies/hurt.gd" id="6_sjo2h"]
 [ext_resource type="Script" uid="uid://64ykmek6tm8k" path="res://Enemies/ranged_attack.gd" id="7_mo1id"]
 [ext_resource type="Script" uid="uid://txl44e0qb3ia" path="res://Enemies/death.gd" id="9_sjo2h"]
+[ext_resource type="Script" uid="uid://dl3ysgqmpsh3m" path="res://Enemies/summon.gd" id="10_oatxv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_effnk"]
 size = Vector2(29, 58)
@@ -215,9 +216,15 @@ script = ExtResource("5_62cjh")
 [node name="death" type="Node2D" parent="FiniteStateMachine" unique_id=1821370794]
 script = ExtResource("9_sjo2h")
 
-[node name="Timer" type="Timer" parent="." unique_id=1841717488]
+[node name="summon" type="Node2D" parent="FiniteStateMachine" unique_id=1042494777]
+script = ExtResource("10_oatxv")
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=1841717488]
 wait_time = 4.0
 one_shot = true
+
+[node name="SummonTimer" type="Timer" parent="." unique_id=570842773]
+wait_time = 7.0
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1819398735]
 

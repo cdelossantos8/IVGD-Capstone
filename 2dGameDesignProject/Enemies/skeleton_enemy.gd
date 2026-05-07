@@ -21,6 +21,7 @@ var isKnockedBack : bool = false
 
 
 func _ready():
+	anim.play("Rise")
 	headshot_label.visible = false
 	startingLabelPos = headshot_label.position
 	add_to_group("enemy")
