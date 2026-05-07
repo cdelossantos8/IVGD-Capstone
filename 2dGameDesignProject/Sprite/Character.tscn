@@ -186,6 +186,8 @@ size = Vector2(102, 124)
 
 [node name="Player" type="CharacterBody2D" unique_id=2039678697]
 scale = Vector2(0.36783552, 0.38528612)
+collision_layer = 7
+collision_mask = 7
 script = ExtResource("1_yk651")
 speed = 300.0
 jumpForce = 600.0

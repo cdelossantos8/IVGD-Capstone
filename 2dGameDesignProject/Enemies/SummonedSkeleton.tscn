@@ -296,9 +296,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h0p1x")
 }],
-"loop": true,
+"loop": false,
 "name": &"Rise",
-"speed": 5.0
+"speed": 14.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -348,13 +348,16 @@ height = 50.8664
 
 [node name="Skeleton" type="CharacterBody2D" unique_id=1046337729]
 scale = Vector2(1.6152468, 1.3822494)
+collision_layer = 4
 script = ExtResource("1_2aq5j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=118319019]
 position = Vector2(1.2382011, 0.7234583)
 scale = Vector2(1.8250564, 1.8913183)
 sprite_frames = SubResource("SpriteFrames_euxau")
-animation = &"Idle"
+animation = &"Rise"
+frame = 12
+frame_progress = 1.0
 
 [node name="PhysicsCollision" type="CollisionShape2D" parent="." unique_id=1761152229]
 position = Vector2(-0.6191, 15.916076)

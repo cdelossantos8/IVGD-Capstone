@@ -20,14 +20,18 @@ var collisionBoxes : Array = [ $PhysicsCollision, $Hitbox/HitboxShape, $Headshot
 var isKnockedBack : bool = false
 @onready var player = get_parent().get_node("CharacterBody2D")
 
+var isRising = true
 
 func _ready():
 	headshot_label.visible = false
 	startingLabelPos = headshot_label.position
 	add_to_group("enemy")
 	hitbox.body_entered.connect(onBodyEntered)
+	
+	await get_tree().process_frame
 	anim.play("Rise")
 	await anim.animation_finished
+	isRising = false
 
 func onBodyEntered(body):
 	print("Hit: ", body.name, " | isKnockedBack: ", isKnockedBack, " | inGroup: ", body.is_in_group("enemy"))
@@ -40,7 +44,9 @@ func onBodyEntered(body):
 			die()
 
 func _physics_process(delta: float) -> void:
-	
+	if isRising == true:
+		return
+		
 	anim.play("Walking")
 	
 	if not is_on_floor():

@@ -8,7 +8,7 @@ var spell : PackedScene = preload('res://Enemies/Spell.tscn')
 var knockbackVelocity = Vector2.ZERO
 @export var gravity: float = 900.0
 @export var speed = 100
-@export var health : int = 250
+@export var health : int = 500
 var direction: int
 
 func _ready():

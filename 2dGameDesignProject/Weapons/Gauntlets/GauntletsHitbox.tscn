@@ -10,6 +10,8 @@ radius = 48.4
 height = 128.8
 
 [node name="GauntletsHitbox" type="Area2D" unique_id=2101078585]
+collision_layer = 7
+collision_mask = 7
 script = ExtResource("1_gmlnn")
 
 [node name="Capow" type="Sprite2D" parent="." unique_id=1896213199]

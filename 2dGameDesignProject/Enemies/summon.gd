@@ -14,10 +14,11 @@ func enter():
 	print(direction)
 	
 	var summon1 = summon.instantiate()
-	summon1.global_position = owner.global_position + Vector2(direction * 100, 0)
+	summon1.global_position = owner.global_position + Vector2(direction * 100, 59)
+	
 	
 	var summon2 = summon.instantiate()
-	summon2.global_position = owner.global_position + Vector2(direction * 200, 0)
+	summon2.global_position = owner.global_position + Vector2(direction * 200, 59)
 	
 	get_tree().current_scene.add_child(summon1)
 	get_tree().current_scene.add_child(summon2)
