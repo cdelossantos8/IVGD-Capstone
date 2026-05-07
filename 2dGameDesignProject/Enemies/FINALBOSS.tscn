@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://colrsyu5bpkbe" path="res://Enemies/FiniteStateMachine.gd" id="2_54lsq"]
 [ext_resource type="Script" uid="uid://b7utbtpbwggqj" path="res://Enemies/idle.gd" id="3_dr60k"]
 [ext_resource type="Script" uid="uid://dtyyo0r5d1vf0" path="res://Enemies/walking.gd" id="5_62cjh"]
+[ext_resource type="Script" uid="uid://dj45p7wpxbof4" path="res://Enemies/attack.gd" id="5_dl0fm"]
+[ext_resource type="Script" uid="uid://64ykmek6tm8k" path="res://Enemies/ranged_attack.gd" id="7_mo1id"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_effnk"]
 size = Vector2(29, 58)
@@ -172,18 +174,22 @@ script = ExtResource("2_54lsq")
 script = ExtResource("3_dr60k")
 
 [node name="attack" type="Node2D" parent="FiniteStateMachine" unique_id=1076957233]
-script = ExtResource("2_5rl2e")
+script = ExtResource("5_dl0fm")
 
 [node name="hurt" type="Node2D" parent="FiniteStateMachine" unique_id=1860807878]
 script = ExtResource("2_5rl2e")
 
 [node name="ranged_attack" type="Node2D" parent="FiniteStateMachine" unique_id=1708766842]
-script = ExtResource("2_5rl2e")
+script = ExtResource("7_mo1id")
 
 [node name="walking" type="Node2D" parent="FiniteStateMachine" unique_id=264714620]
 script = ExtResource("5_62cjh")
 
 [node name="death" type="Node2D" parent="FiniteStateMachine" unique_id=1821370794]
 script = ExtResource("2_5rl2e")
+
+[node name="Timer" type="Timer" parent="." unique_id=1841717488]
+wait_time = 4.0
+one_shot = true
 
 [connection signal="body_entered" from="PlayerDetection" to="FiniteStateMachine/idle" method="_on_player_detection_body_entered"]

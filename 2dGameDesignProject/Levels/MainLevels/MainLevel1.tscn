@@ -508,7 +508,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_dycxk")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dycxk"]
-size = Vector2(1376, 154)
+size = Vector2(2880, 154)
 
 [node name="MainLevel1" type="Node2D" unique_id=1196810243]
 
@@ -635,7 +635,7 @@ position = Vector2(1232, 114)
 shape = SubResource("RectangleShape2D_dycxk")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="CatchFall" unique_id=1404639824]
-position = Vector2(4368, 269)
+position = Vector2(5120, 269)
 shape = SubResource("RectangleShape2D_dycxk")
 
 [node name="CharacterBody2D" parent="." unique_id=2039678697 instance=ExtResource("5_6hrob")]
